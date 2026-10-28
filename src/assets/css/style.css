@@ -5,7 +5,7 @@
 
 /* section */
 @import "section/header.css";
-@import "section/slide.css";
+@import "section/slider.css";
 @import "section/image.css";
 @import "section/imageText.css";
 @import "section/card.css";

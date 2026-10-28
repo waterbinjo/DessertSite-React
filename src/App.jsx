@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./components/Header";
-import Slide from "./components/Slide";
+import Slider from "./components/Slider";
 import Image from "./components/Image";
 import ImageText from "./components/ImageText";
 import Card from "./components/Card";
@@ -12,7 +12,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <Slide />
+      <Slider />
       <Image />
       <ImageText />
       <Card />

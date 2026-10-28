@@ -5,12 +5,13 @@ const Footer = () => {
   return (
     <footer id="footer" className="section">
       <h2 className="blind">푸터영역</h2>
+
       <div className="container footer_inner">
         {footerData.map((footer, index) => (
-          <div>
+          <div key={index}>
             <h2>{footer.title}</h2>
             <ul>
-              {footer.links.map(() => (
+              {footer.links.map((link, i) => (
                 <li key={i}>
                   <a href="/">{link}</a>
                 </li>
@@ -19,6 +20,7 @@ const Footer = () => {
           </div>
         ))}
       </div>
+
       <div className="footer_capyright">
         2021 A TWOSOME PLACE Co., LTD.
         <br />

@@ -1,10 +1,14 @@
 import React from "react";
 import { imageTextData, imageTextData2 } from "../data/imageTextData";
 
-const ImageText = () => {
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+const ImageText = ({ title }) => {
+  AOS.init();
   return (
     <section id="imageText" className="section">
-      <h1 className="blind">이미지 텍스트 유형</h1>
+      <h1 className="blind">{title}</h1>
       <div className="container imageText_inner">
         <div className="imageText_txt">
           <div className="small">이미지/텍스트 유형</div>

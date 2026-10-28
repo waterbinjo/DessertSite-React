@@ -11,4 +11,4 @@ export const menuData = [
   { title: "EVENT", link: "#textType" },
 ];
 
-export const memberData = ["로그인", "회원가입", "오 신기", "올.."];
+export const memberData = ["로그인", "회원가입"];

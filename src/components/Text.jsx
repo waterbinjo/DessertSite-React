@@ -1,14 +1,46 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { textData } from "../data/textData";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const Text = () => {
+const Text = ({ title }) => {
+  const textInner = useRef(null);
+  const textRef = useRef([]);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.fromTo(
+      textRef.current,
+      {
+        y: 100,
+        opacity: 0,
+      },
+
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: textInner.current,
+          start: "top 80%",
+        },
+      },
+    );
+  }, []);
+
   return (
     <section id="textType" className="section">
       <span>텍스트 유형</span>
-      <h2>다체로운 베이커리 컬렉션</h2>
-      <div className="container text_inner">
-        {textData.map((text) => (
-          <div className={`txt t${text.id}`} key={text.id}>
+      <h2>{title}</h2>
+      <div className="container text_inner" ref={textInner}>
+        {textData.map((text, index) => (
+          <div
+            className={`txt t${text.id}`}
+            key={text.id}
+            ref={(el) => (textRef.current[index] = el)}
+          >
             <div className="text_title">{text.title}</div>
             <div className="text_desc">{text.desc}</div>
             <a href="#" className="text_btn">
